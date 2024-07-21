@@ -3,14 +3,20 @@
 - It compares the adjucent elements, if element present at lower index is > than the element present at higher index then will swap it.
 - in 1st iteration will get the maximum value at end.
 - in each iteration we will get max index at end.
+
 App : find 1st/2nd highest value
-TC : O(n) in worst case its O(n2)
+DS : Array
+TC : O(n^2)
+SC :   O(1)
 
 2. Selection Sort :
 =====================
 - In this we are comparing the ith index with i+1 elements and finding the minIndex at which minValue is present and we are replacing it with ith index.
+	
 App : find 1st/2nd lowest value OR Min swaps required to Sort the Array.
-TC : O(n)  in worst case its O(n2)
+DS : Array
+TC : O(n^2)
+SC :  O(1)
 
 3. Two way Merging :
 ====================
@@ -21,14 +27,21 @@ TC : O(n)  in worst case its O(n2)
 4. Merge Sort :
 ================
 - Works on principle of 2 way merging
+
 TC : O(n logn)
+SC : O(n)
 App: used in large dataSets such as external sorting algorithms.
+DS : Array
 
 5. Quick Sort(Lomuto's Partition) :
 ====================================
 - In this algo we are considering the last element as Pivot element and try to sort the pivot in such way that before pivot lesser elements will be present (may or may not be sorted) and after the pivot higher element should be present (may or may not be sorted).
-TC : O(n^2)
+
+TC : O(n^2) --Avg O(log n)
+SC : O(logn)
 App : used in database to sort records.
+DS : Array
+
 
 6. Quick Sort(Hoare's Partition) :
 ===================================
@@ -40,8 +53,11 @@ App : used in database to sort records.
 Heap : Heap is a complete binary tree. internal DS is Array
 Max Heap : It should be a heap.
 - each parent should be > than child
+
 TC : O(n log n)
+SC : O(1)
 App : employed in priority Queue
+DS : Array (Heap)
 
 In array 
 => 0 to n/2 -1   : all parents will be present
@@ -54,23 +70,33 @@ RC : 2 * i + 2   (Right child)
 ====================
 - It is like sorting playing cards in our hand. we pick up one card at a time and insert it to its correct position amongst the cards which we already sorted.
 - will keep doing until cards(or elements) are in right order.
+
+DS : Array
 TC : O(n^2)
+SC :   O(1)
 
 9. BFS : Bredth first search :
 ============================
 - Breadth-First Search (BFS) is a traversal algorithm used for tree and graph data structures.
 - It starts at the root node and explores all neighbouring nodes at current depth level before moving on to nodes at next depth level.
 - BFS uses Queue data structure to keep track of nodes to be explored, ensuring that nodes are processed in the order they are discovered.
+
 App : shortest path finding in graph & level order traversal in tree
 TC : O(V + E)  -- where V - vertices & E - edges
+SC : O(V)
+DS : Queue / AdjacencyList
+
 
 10. DFS : Depth First Search :
 ==============================
 - Depth-First Search (DFS) is a traversal algorithm for trees and graphs.
 - It starts the root node and explores as far down a branch as possible before backtracking.
 - DFS uses stack data structure, either explicitly with a stack or implicitly with recursion.
+
 App : In trees DFS can be used in in-order , pre-order, post-order traversal.
 TC : O(V + E)
+SC : O(V)
+DS : Stack(Recursion)/ AdjacencyList
 
 
 11. Recursion :
@@ -83,14 +109,21 @@ TC : O(V + E)
 1. Linear search :
 ===================
 - Its sequentially checks each element from the beginning to the end of the array until it finds the target element.
+	
 TC : O(n) - linear time
+SC : O(1)
+DS : Array
+
 
 2. Binary Search :
 ====================
 - It is an efficient algo for finding an item in sorted array.
 - It repeatadly divides the search interval in half.
 - If the target value is less than the middle element it searches in left half otherwise serches in right half.
+	
 TC : O(log n) : Logarithmic time
+SC : O(1)
+DS : Array
 
 
 #Overflow issue in Binary Search :
@@ -106,18 +139,26 @@ Ex: int l=1000;
   
   
 ================================================ Trees =======================================================
-1. Tree :
+1. Trie :
 =======
 - If we want to represent data in hierarchical format then will go with tree data structure.
-- A tree can have any no. of childrans.
+- A trie can have any no. of childrans.
+
+TC : O(m)
+SC : O(n*m)
 
 2. Binary Tree :
 =================
 - A tree in which maximum of 2 childrans are present (it can have 0/1/2 max).
 
+
+
 3. Binary Search Tree :
 ========================
 - Its tree in which anything lesser than the root node will go towards left, anything greater than root node will go towards right.
+
+TC : O(n)
+SC : O(log n)
 
 4. Full Binary Tree :
 ======================
@@ -129,11 +170,17 @@ Ex: int l=1000;
 
 6. Tree Traversal Techniques :
 ============================
-1. In Order Traversal :  left -> root -> right
+1. In Order Traversal :  left -> root -> right   
+- Inorder traversal of a BST returns the nodes in ascending order.
 
 2. Pre order Traversal : root -> left -> right
+Suitable for creating copies of trees and prefix notation.
 
 3. Post Order Traversal : left -> right -> root
+Suitable for deleting trees and postfix notation.
+
+Time Complexity: O(n)
+Space Complexity: O(h) for recursion stack, where h is the height of the tree (O(log n) for balanced tree, O(n) for unbalanced tree).
 
 Leaves of Binary Tree :
 ========================
@@ -141,3 +188,11 @@ Leaves of Binary Tree :
 
 min in BST : extream left
 max in BST : extream right
+
+Stack - O(1)
+Queue - O(1)
+Dequeue - O(1)
+Heap - log n (Insert/deletion) else O(1) access
+Hashset - O(N) due to collision --avg O(1)
+HashMap - O(N) due to collision --avg O(1)
+HashTable  - O(N) due to collision --avg O(1)
