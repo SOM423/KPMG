@@ -18,7 +18,8 @@ public class Anagarm {
 		for(String s : str)
 		{
 			char[] charray = s.toCharArray();
-			 
+
+			Arrays.sort(charray); // Sort the character array
 			
 			String sortedString = new String(charray);
 			
